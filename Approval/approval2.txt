@@ -1,0 +1,9 @@
+Scenario: Unsuccessful login with invalid password
+    Given the user is on the login page
+    And the user has a registered account with email "test@example.com" and password "SecurePass123"
+    When the user enters "test@example.com" into the email field
+    And the user enters "WrongPass" into the password field
+    And the user clicks the "Login" button
+    Then an error message "Invalid email or password." should be displayed
+    And the user should remain on the login page
+    And the dashboard page should not be visible
