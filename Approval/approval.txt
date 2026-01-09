@@ -1,0 +1,8 @@
+Scenario: Successful login with valid credentials
+    Given the user is on the login page
+    And the user has a registered account with email "test@example.com" and password "SecurePass123"
+    When the user enters "test@example.com" into the email field
+    And the user enters "SecurePass123" into the password field
+    And the user clicks the "Login" button
+    Then the user should be redirected to the dashboard page
+    And the user should see a welcome message "Welcome to your Dashboard!"
